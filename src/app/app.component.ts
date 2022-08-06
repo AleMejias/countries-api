@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'countries-api';
+
+  @ViewChild('themeMode') themeMode!: ElementRef;
+
+  handleThemeMode( themeMode: boolean ) {
+
+    if( themeMode ) {
+
+      this.themeMode.nativeElement.classList.add('dark')
+    } else {
+      this.themeMode.nativeElement.classList.remove('dark')
+    }
+
+  }
 }

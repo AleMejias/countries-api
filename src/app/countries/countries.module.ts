@@ -5,19 +5,20 @@ import { CountriesRoutingModule } from './countries-routing.module';
 
 
 import { ListCountriesComponent } from './pages/list-countries/list-countries.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HandleSpanTitlePipe } from './pipes/handle-span-title.pipe';
 
 
 
 @NgModule({
   declarations: [
     ListCountriesComponent,
-    HeaderComponent
+    HandleSpanTitlePipe
   ],
   imports: [
     CommonModule,
     CountriesRoutingModule
-  ]
+  ],
+  exports: [ HandleSpanTitlePipe ]
 })
 export class CountriesModule { }
 
