@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<section #themeMode class="font-NunitoSans border-1 border-red-600">
+
+  <!-- COMPONENTE HEADER DE LA APP -->
+  <app-header (themeModeEvent)="handleThemeMode($event)">
+
+  </app-header>
+
+  <router-outlet></router-outlet>
+
+</section>
+
+

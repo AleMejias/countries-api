@@ -1,9 +1,9 @@
 
-<section class="grid grid-cols-2 py-8 px-5 bg-DarkMode-Elements">
+<section class="grid grid-cols-2 py-4 sm:py-8 md:py-8 lg:py-8 xl:py-8 2xl:py-8 px-2 sm:px-5 md:px-5 lg:px-5 xl:px-5 2xl:px-5 bg-white dark:bg-DarkMode-Elements">
 
-  <div>
+  <div class="flex justify-start items-end">
 
-    <h1 class="text-sm text-White font-semibold">Where in the world?</h1>
+    <h1 class="text-xs sm:text-sm md:text-lg text-LightMode-VeryDarkBlueText dark:text-White font-semibold">Where in the world?</h1>
 
   </div>
 
@@ -11,10 +11,19 @@
 
     <div class="flex justify-end items-end">
 
-      <span class="material-symbols-sharp text-White">
-        dark_mode
-      </span>
-      <button class="mx-2 text-xs text-White font-light">Dark Mode</button>
+      <button class="flex items-end text-xs md:text-sm font-light"
+              (click)="handleThemeMode()"
+              [title]="flagThemeMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'">
+
+        <span class="material-symbols-sharp text-LightMode-VeryDarkBlueText" *ngIf="!flagThemeMode">
+          dark_mode
+        </span>
+        <span class="material-symbols-sharp text-yellow-300" *ngIf="flagThemeMode">
+          light_mode
+        </span>
+        <span class="mx-2 dark:text-White">{{ flagThemeMode | handleSpanTitle }}</span>
+
+      </button>
 
     </div>
 
