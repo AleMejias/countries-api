@@ -1,21 +1,21 @@
 
-<section class="bg-LightMode-VeryLightGrayBackground dark:bg-DarkMode-VeryDarkBlueBackground">
+<section class="bg-LightMode-VeryLightGrayBackground dark:bg-DarkMode-VeryDarkBlueBackground pt-10">
 
-  <div class="border border-green-600 h-auto">
+  <div class="w-[90%] mx-auto h-auto">
 
-    <form class="mt-7 flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row 2xl:flex-row">
+    <form class="flex flex-col sm:flex-row">
 
-      <div class="flex flex-row w-full sm:w-1/2 px-2 relative">
+      <div class="flex flex-row w-full sm:w-1/2 px-3 relative">
 
-        <span class="material-symbols-sharp h-fit absolute top-2.5 left-5 dark:text-White">
+        <span class="material-symbols-sharp h-fit absolute top-3 left-5 dark:text-White text-md">
           search
         </span>
         <input type="text" name="search" id="search" placeholder="Search for a country"
-               class="w-full py-3 pl-10 text-left rounded  text-LightMode-VeryDarkBlueText placeholder:text-LightMode-VeryDarkBlueText placeholder:dark:text-White dark:text-White font-semibold bg-White dark:bg-DarkMode-Elements" />
+               class="w-full py-2 pl-14 leading-8 text-left rounded  text-LightMode-VeryDarkBlueText placeholder:text-LightMode-VeryDarkBlueText placeholder:dark:text-White dark:text-White font-semibold bg-White dark:bg-DarkMode-Elements" />
 
       </div>
 
-      <div class="w-full sm:w-1/2 mt-3 px-2">
+      <div class="flex justify-start sm:justify-end w-full sm:w-1/2 mt-3 sm:mt-0 px-3">
 
         <select name="filters" id="filters" class="py-3 px-4 rounded text-LightMode-VeryDarkBlueText dark:text-White font-semibold bg-White dark:bg-DarkMode-Elements">
 
@@ -35,7 +35,14 @@
 
   </div>
 
-  <p class="text-red-500">list-countries works!</p>
+
+  <section class="w-[90%] grid grid-cols-1 mx-auto h-auto pt-10" *ngFor="let country of countryMockup">
+
+    <app-country-card [country]="country">
+
+    </app-country-card>
+
+  </section>
 
 </section>
 

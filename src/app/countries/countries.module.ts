@@ -6,13 +6,15 @@ import { CountriesRoutingModule } from './countries-routing.module';
 
 import { ListCountriesComponent } from './pages/list-countries/list-countries.component';
 import { HandleSpanTitlePipe } from './pipes/handle-span-title.pipe';
+import { CountryCardComponent } from './components/country-card/country-card.component';
 
 
 
 @NgModule({
   declarations: [
     ListCountriesComponent,
-    HandleSpanTitlePipe
+    HandleSpanTitlePipe,
+    CountryCardComponent
   ],
   imports: [
     CommonModule,

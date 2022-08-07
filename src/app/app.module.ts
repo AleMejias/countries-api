@@ -1,21 +1,25 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { CountriesModule } from './countries/countries.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './countries/components/header/header.component';
-import { HandleSpanTitlePipe } from './countries/pipes/handle-span-title.pipe';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    HandleSpanTitlePipe
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    CountriesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
