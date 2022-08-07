@@ -9,7 +9,7 @@ module.exports = {
       backgroundColor: {
         'DarkMode-Elements': '#2b3945',
         'DarkMode-VeryDarkBlueBackground': '#202c37',
-        'LightMode-DarkGrayInput': '	#858585',
+        'LightMode-DarkGray': '	#858585',
         'LightMode-VeryLightGrayBackground': '	#fafafa',
         'White': '#ffffff'
       },

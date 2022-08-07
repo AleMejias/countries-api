@@ -1,6 +1,41 @@
 
-<section class="border-1 border-green-400">
-  <p>list-countries works!</p>
+<section class="bg-LightMode-VeryLightGrayBackground dark:bg-DarkMode-VeryDarkBlueBackground">
+
+  <div class="border border-green-600 h-auto">
+
+    <form class="mt-7 flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row 2xl:flex-row">
+
+      <div class="flex flex-row w-full sm:w-1/2 px-2 relative">
+
+        <span class="material-symbols-sharp h-fit absolute top-2.5 left-5 dark:text-White">
+          search
+        </span>
+        <input type="text" name="search" id="search" placeholder="Search for a country"
+               class="w-full py-3 pl-10 text-left rounded  text-LightMode-VeryDarkBlueText placeholder:text-LightMode-VeryDarkBlueText placeholder:dark:text-White dark:text-White font-semibold bg-White dark:bg-DarkMode-Elements" />
+
+      </div>
+
+      <div class="w-full sm:w-1/2 mt-3 px-2">
+
+        <select name="filters" id="filters" class="py-3 px-4 rounded text-LightMode-VeryDarkBlueText dark:text-White font-semibold bg-White dark:bg-DarkMode-Elements">
+
+          <option value="" disabled selected>Filter By Región</option>
+          <option value="Africa" >África</option>
+          <option value="America" >América</option>
+          <option value="Asia" >Asia</option>
+          <option value="Europe" >Europa</option>
+          <option value="Oceania" >Oceanía</option>
+
+        </select>
+
+      </div>
+
+
+    </form>
+
+  </div>
+
+  <p class="text-red-500">list-countries works!</p>
 
 </section>
 
