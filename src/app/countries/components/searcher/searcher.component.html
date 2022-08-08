@@ -1,0 +1,29 @@
+<form class="flex flex-col sm:flex-row" (ngSubmit)="onSubmit()" [formGroup]="filtersForm">
+
+  <div class="flex flex-row w-full sm:w-1/2 px-3 relative">
+
+    <span class="material-symbols-sharp h-fit absolute top-3 left-5 dark:text-White text-md">
+      search
+    </span>
+    <input formControlName="searcher" type="text" name="search" id="search" placeholder="Search for a country"
+           class="w-full py-2 pl-14 leading-8 text-left rounded  text-LightMode-VeryDarkBlueText placeholder:text-LightMode-VeryDarkBlueText placeholder:dark:text-White dark:text-White font-semibold bg-White dark:bg-DarkMode-Elements" />
+
+  </div>
+
+  <div class="flex justify-start sm:justify-end w-full sm:w-1/2 mt-3 sm:mt-0 px-3">
+
+    <select formControlName="filters" name="filters" id="filters" class="py-3 px-4 rounded text-LightMode-VeryDarkBlueText dark:text-White font-semibold bg-White dark:bg-DarkMode-Elements">
+
+      <option value="" disabled selected>Filter By Región</option>
+      <option value="africa" >África</option>
+      <option value="america" >América</option>
+      <option value="asia" >Asia</option>
+      <option value="europe" >Europa</option>
+      <option value="oceania" >Oceanía</option>
+
+    </select>
+
+  </div>
+
+
+</form>

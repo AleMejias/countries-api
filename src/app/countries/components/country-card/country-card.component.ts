@@ -8,13 +8,11 @@ import { Country } from '../../models/country';
 })
 export class CountryCardComponent implements OnInit {
 
-  @Input() country!: Country;
+  @Input() country!: Country[];
   constructor() { }
 
   ngOnInit(): void {
 
-
-    console.log('MANDE ESTO ',this.country);
 
   }
 
