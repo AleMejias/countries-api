@@ -21,8 +21,11 @@ export class CountriesService {
   }
 
   getCountriesByRegion( currentRegion: string ) : Observable<Country[]> {
-    console.log('recibi esto ',currentRegion)
 
     return this.http.get<Country[]>(`https://restcountries.com/v3.1/region/${currentRegion}`)
+  }
+  getCountriesByName( currentName: string ) : Observable<Country[]> {
+
+    return this.http.get<Country[]>(`https://restcountries.com/v3.1/name/${currentName}`)
   }
 }

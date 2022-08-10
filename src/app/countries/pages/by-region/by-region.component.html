@@ -1,1 +1,23 @@
-<p>by-region works!</p>
+
+<section class="bg-LightMode-VeryLightGrayBackground dark:bg-DarkMode-VeryDarkBlueBackground pt-10">
+
+
+  <div class="w-[90%] mx-auto h-auto">
+
+    <!-- INPUT DE BUSQUEDA Y SELECT DE FILTRADO -->
+    <app-searcher>
+
+    </app-searcher>
+
+  </div>
+
+  <section class="w-[90%] mx-auto h-auto py-14 px-3">
+
+    <app-country-card [country]="countriesByRegion">
+
+    </app-country-card>
+
+  </section>
+
+</section>
+

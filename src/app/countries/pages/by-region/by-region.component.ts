@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap, Params } from '@angular/router';
 import { concatMap } from 'rxjs';
+import { Country } from '../../models/country';
 
 
 import { CountriesService } from '../../services/countries.service';
@@ -11,6 +12,8 @@ import { CountriesService } from '../../services/countries.service';
   styleUrls: ['./by-region.component.scss']
 })
 export class ByRegionComponent implements OnInit {
+
+  countriesByRegion: Country[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -24,7 +27,11 @@ export class ByRegionComponent implements OnInit {
       concatMap(( regionSelected ) => this.countryService.getCountriesByRegion( regionSelected['region'] ))
     ).subscribe(( countries ) => {
 
-      console.log('PAISES QUE RECIBO POR RUTA ',countries);
+      if( countries ) {
+
+        this.countriesByRegion = countries;
+
+      }
 
     })
 

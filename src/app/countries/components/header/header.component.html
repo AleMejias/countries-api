@@ -15,10 +15,10 @@
               (click)="handleThemeMode()"
               [title]="flagThemeMode ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'">
 
-        <span class="material-symbols-sharp text-LightMode-VeryDarkBlueText" *ngIf="!flagThemeMode">
+        <span class="material-symbols-outlined text-LightMode-VeryDarkBlueText" *ngIf="!flagThemeMode">
           dark_mode
         </span>
-        <span class="material-symbols-sharp text-yellow-300" *ngIf="flagThemeMode">
+        <span class="material-symbols-outlined text-yellow-300" *ngIf="flagThemeMode">
           light_mode
         </span>
         <span class="mx-2 dark:text-White">{{ flagThemeMode | handleSpanTitle }}</span>
