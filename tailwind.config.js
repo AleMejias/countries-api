@@ -23,6 +23,9 @@ module.exports = {
       },
       colors:{
         'LightMode-VeryDarkBlueText': '#111517',
+        'DarkMode-Elements': '#2b3945',
+        'DarkMode-VeryDarkBlueBackground': '#202c37',
+        'LightMode-VeryLightGrayBackground': '	#fafafa',
         'White': '#ffffff'
       },
       fontFamily: {

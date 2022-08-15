@@ -10,6 +10,8 @@ import { HandleSpanTitlePipe } from './pipes/handle-span-title.pipe';
 import { CountryCardComponent } from './components/country-card/country-card.component';
 import { SearcherComponent } from './components/searcher/searcher.component';
 import { ByRegionComponent } from './pages/by-region/by-region.component';
+import { CountryByDetailComponent } from './pages/country-by-detail/country-by-detail.component';
+import { DetailCardComponent } from './components/detail-card/detail-card.component';
 
 
 
@@ -19,7 +21,10 @@ import { ByRegionComponent } from './pages/by-region/by-region.component';
     HandleSpanTitlePipe,
     CountryCardComponent,
     SearcherComponent,
-    ByRegionComponent
+    ByRegionComponent,
+    CountryByDetailComponent,
+    DetailCardComponent,
+
   ],
   imports: [
     CommonModule,
