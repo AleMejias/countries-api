@@ -8,7 +8,7 @@ export interface Country {
   independent:  boolean;
   status:       string;
   unMember:     boolean;
-  currencies:   Currencies;
+  currencies:   { [key: string]: Currency };
   idd:          Idd;
   capital:      string[];
   altSpellings: string[];
@@ -50,11 +50,7 @@ export interface CoatOfArms {
   svg: string;
 }
 
-export interface Currencies {
-  ARS: Ars;
-}
-
-export interface Ars {
+export interface Currency {
   name:   string;
   symbol: string;
 }
@@ -79,8 +75,7 @@ export interface Idd {
 }
 
 export interface Languages {
-  grn: string;
-  spa: string;
+  [key: string]: string;
 }
 
 export interface Maps {

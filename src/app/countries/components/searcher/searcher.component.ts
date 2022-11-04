@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 
 import { map, debounceTime } from 'rxjs';
 import { Country } from '../../models/country';
+import { CountriesService } from '../../services/countries.service';
 
 interface Options {
   value: string;
@@ -1481,6 +1482,7 @@ export class SearcherComponent implements OnInit {
   })
 
   constructor(
+    private countriesService: CountriesService,
     private router: Router
   ) { }
 
@@ -1502,24 +1504,21 @@ export class SearcherComponent implements OnInit {
 
     this.filtersForm.controls['filters'].valueChanges.subscribe((filters) => {
 
-      if( filters ) {
-
-        console.log('Cambios de mi formulario filters',filters);
-        if( filters === 'all' ) {
-
-          this.regionSelected= 'All countries';
-          this.router.navigate(['/list']);
 
 
-        } else {
+      if( filters === 'all' ) {
 
-          this.regionSelected= `${ filters }`;
-          this.router.navigate(['/region'],{ queryParams: { region: filters } })
+        this.regionSelected= 'All countries';
+        // this.countriesService.setCountriesByRegion( this.regionSelected );
+        this.router.navigate(['/list']);
+        return;
 
-        }
 
       }
 
+      this.regionSelected= `${ filters }`;
+      // this.countriesService.setCountriesByRegion( this.regionSelected );
+      this.router.navigate(['/region' ],{ queryParams: { region: filters } })
 
 
     })

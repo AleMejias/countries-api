@@ -1,7 +1,7 @@
 
 <div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xs:gap-x-6 md:gap-x-10 lg:gap-x-12 gap-y-14">
 
-  <article *ngFor="let country of country">
+  <article *ngFor="let country of country" (click)="countrySelected( country.cca3 )" class="hover:cursor-pointer">
 
     <div class="relative pb-48 overflow-hidden rounded-t-lg">
       <img class="absolute inset-0 h-full w-full object-cover" [src]="country.flags.png" [alt]="country.name.common">

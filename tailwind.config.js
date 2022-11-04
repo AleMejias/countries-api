@@ -21,11 +21,15 @@ module.exports = {
         'LightMode-VeryLightGrayBackground': '	#fafafa',
         'White': '#ffffff'
       },
+      boxShadow: {
+        'custom': '0px 0px 6px 0px'
+      },
       colors:{
         'LightMode-VeryDarkBlueText': '#111517',
         'DarkMode-Elements': '#2b3945',
         'DarkMode-VeryDarkBlueBackground': '#202c37',
         'LightMode-VeryLightGrayBackground': '	#fafafa',
+        'LightMode-DarkGray': '	#858585',
         'White': '#ffffff'
       },
       fontFamily: {

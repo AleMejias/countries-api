@@ -1,1 +1,106 @@
-<p>detail-card works!</p>
+
+<div class="grid grid-rows-">
+
+  <div class="px-5 py-10">
+
+    <button class="px-8 py-1.5 shadow-custom shadow-LightMode-DarkGray flex justify-center bg-White text-LightMode-VeryDarkBlueText dark:text-White dark:bg-DarkMode-Elements font-semibold rounded-md"
+            (click)="goBack()"
+            title="Regresar">
+      <span class="material-symbols-outlined mr-1">
+        arrow_back
+        </span>
+        Back
+    </button>
+
+  </div>
+
+  <div class="grid grid-cols-2">
+
+    <!-- COUNTRY IMAGE -->
+    <div class="py-12 px-12">
+
+      <img  class="h-full" [src]="country.flags.svg" [alt]="country.name.common">
+
+    </div>
+
+    <div class="">
+
+      <!--  COUNTRY TITLE -->
+
+      <div class="py-4 px-3">
+
+        <h3 class="mt-2 mb-2 text-xs sm:text-2xl font-bold text-LightMode-VeryDarkBlueText dark:text-White"> {{country.name.common}} </h3>
+
+      </div>
+
+      <!-- COUNTRY INFO -->
+      <div class="grid grid-cols-2 py-6 px-3 text-LightMode-VeryDarkBlueText dark:text-White">
+
+        <div>
+
+          <ul>
+            <li>
+              <strong>Official Name: </strong><span>{{ country.name.official }}</span>
+            </li>
+            <li>
+              <strong>Population: </strong><span>{{ country.population | number }}</span>
+            </li>
+            <li>
+              <strong>Region: </strong><span>{{ country.region }}</span>
+            </li>
+            <li>
+              <strong>Sub Region: </strong><span>{{ country.subregion }}</span>
+            </li>
+            <li>
+              <strong>Capital: </strong><span>{{ country.capital }}</span>
+            </li>
+          </ul>
+
+
+        </div>
+
+        <div>
+
+          <ul>
+            <li>
+              <strong>Top level Domain: </strong><span>{{ country.tld }}</span>
+            </li>
+            <li>
+              <strong>Currencies: </strong><span *ngFor="let item of country.currencies | keyvalue">{{ item.value.name }}.</span>
+            </li>
+            <li>
+              <strong>Languages: </strong><span>{{ this.countryLanguages }} </span>.
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <!-- COUNTRY BORDERS-->
+
+      <div class="flex px-3">
+        <div class="w-[20%]">
+          <strong class="text-LightMode-VeryDarkBlueText dark:text-White">Border Countries: </strong>
+
+        </div>
+        <div class="w-[80%]">
+          <button class="py-1.5 px-7 ml-2 mb-2 w-fit shadow-custom shadow-LightMode-DarkGray bg-White text-LightMode-VeryDarkBlueText dark:text-White dark:bg-DarkMode-Elements font-semibold rounded-md"
+                  *ngFor="let country of countriesByBorder"
+                  (click)="changeUrlParams( country.cca3 )"
+                  title="Ver detalle">
+                  {{ country.name.common }}
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+</div>
+

@@ -23,7 +23,7 @@ export class ByRegionComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
+    console.log(this.activatedRoute.queryParams)
     this.activatedRoute.queryParams.pipe(
 
       concatMap(( regionSelected ) => this.countryService.getCountriesByRegion( regionSelected['region'] ))

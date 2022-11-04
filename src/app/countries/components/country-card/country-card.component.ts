@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Country } from '../../models/country';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-country-card',
@@ -9,10 +10,20 @@ import { Country } from '../../models/country';
 export class CountryCardComponent implements OnInit {
 
   @Input() country!: Country[];
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
 
+
+  }
+
+
+  countrySelected( countrySelected: string ){
+
+    console.log('SELECCIONASTE ESTE ',countrySelected)
+    this.router.navigate(['/detail'] , { queryParams: { code :countrySelected } } );
 
   }
 
