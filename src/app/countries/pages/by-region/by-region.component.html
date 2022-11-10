@@ -1,19 +1,19 @@
 
 <section class="bg-LightMode-VeryLightGrayBackground dark:bg-DarkMode-VeryDarkBlueBackground pt-10 h-auto">
 
+
   <div class="w-[90%] mx-auto h-auto">
 
     <!-- INPUT DE BUSQUEDA Y SELECT DE FILTRADO -->
-    <app-searcher [countries]="countries">
+    <app-searcher [countries]="countriesByRegion">
 
     </app-searcher>
 
   </div>
 
+  <section class="w-[90%] mx-auto py-14 px-3">
 
-  <section class="w-[90%] mx-auto h-auto py-14 px-3">
-
-    <app-country-card [country]="countries">
+    <app-country-card [country]="countriesByRegion">
 
     </app-country-card>
 

@@ -1,0 +1,24 @@
+
+<div class="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xs:gap-x-6 md:gap-x-10 lg:gap-x-12 gap-y-14">
+
+  <article *ngFor="let country of country" (click)="countrySelected( country.cca3 )" class="hover:cursor-pointer">
+
+    <div class="relative pb-48 overflow-hidden rounded-t-lg">
+      <img class="absolute inset-0 h-full w-full object-cover" [src]="country.flags.png" [alt]="country.name.common">
+    </div>
+
+    <div class="px-4 py-8 rounded-lg text-LightMode-VeryDarkBlueText dark:text-White bg-White dark:bg-DarkMode-Elements">
+
+      <h2 class="mt-2 mb-2 text-sm sm:text-lg font-bold">{{ country.name.common }}</h2>
+
+      <ul class="mt-3 flex flex-col text-LightMode-VeryDarkBlueText dark:text-White">
+        <li class="text-sm font-semibold"><strong>Population: </strong>{{ country.population | number }}</li>
+        <li class="text-sm font-semibold"><strong>Region: </strong>{{ country.region }}</li>
+        <li class="text-sm font-semibold"><strong>Capital: </strong>{{ country.capital }}</li>
+      </ul>
+
+    </div>
+
+  </article>
+
+</div>

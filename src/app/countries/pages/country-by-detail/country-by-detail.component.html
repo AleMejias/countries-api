@@ -1,0 +1,15 @@
+<section class="bg-LightMode-VeryLightGrayBackground dark:bg-DarkMode-VeryDarkBlueBackground pt-10 h-screen">
+
+
+  <section class="w-[90%] mx-auto py-14 px-3" *ngIf="countryDetail">
+
+    <app-detail-card [country]="countryDetail"
+                     [countriesByBorder]="countriesByBorder"
+                     (paramsCodeEvent)="handleCurrentParamsCode($event)">
+
+
+    </app-detail-card>
+
+  </section>
+
+</section>

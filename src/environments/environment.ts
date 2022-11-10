@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url: 'https://restcountries.com/v3.1',
+  categories: {
+    all: 'all',
+    region: 'region',
+    alpha: 'alpha'
+  }
 };
 
 /*

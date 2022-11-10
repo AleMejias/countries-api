@@ -1,5 +1,5 @@
-<section #themeMode class="font-NunitoSans border-1 border-red-600">
-
+<section #themeMode class="font-NunitoSans bg-white dark:bg-DarkMode-VeryDarkBlueBackground h-screen">
+  <app-spinner [themeMode]="themeModeFlag"></app-spinner>
   <!-- COMPONENTE HEADER DE LA APP -->
   <app-header (themeModeEvent)="handleThemeMode($event)">
 
