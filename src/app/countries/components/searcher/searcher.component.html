@@ -8,11 +8,27 @@
     <input autocomplete="off" formControlName="searcher" type="text" name="search" id="search" placeholder="Search for a country"
            class="w-full py-2 pl-14 leading-8 text-left rounded  text-LightMode-VeryDarkBlueText placeholder:text-LightMode-VeryDarkBlueText placeholder:dark:text-White dark:text-White font-semibold bg-White dark:bg-DarkMode-Elements" />
 
-    <ul *ngIf="countriesFiltered" class="max-h-[295px] border-[1px] text-LightMode-VeryDarkBlueText dark:text-White border-LightMode-VeryLightGrayBackground dark:border-DarkMode-VeryDarkBlueBackground absolute w-[98%] top-[50px] left-[10px] z-[1000] bg-White dark:bg-DarkMode-Elements"
+    <ul *ngIf="countriesFilteredFlag" class="max-h-[295px] border-[1px] text-LightMode-VeryDarkBlueText dark:text-White border-LightMode-VeryLightGrayBackground dark:border-DarkMode-VeryDarkBlueBackground absolute w-[98%] top-[50px] left-[10px] z-[1000] bg-White dark:bg-DarkMode-Elements"
         [ngClass]="{'overflow-y-scroll': countriesFiltered.length > 7 }">
 
       <li  (click)="navigateToCountryDeatil( country )" class="w-full py-2 px-2 border-[1px] border-LightMode-VeryLightGrayBackground dark:border-DarkMode-VeryDarkBlueBackground cursor-pointer hover:bg-LightMode-VeryLightGrayBackground dark:hover:bg-DarkMode-VeryDarkBlueBackground" *ngFor="let country of countriesFiltered">
         <strong>{{ country.cca3 }} | </strong> <span class="font-semibold pl-1"> {{ country.name.common }} </span>
+      </li>
+    </ul>
+<!--     <ng-template #emptyData>
+
+      <ul class="max-h-[295px] border-[1px] text-LightMode-VeryDarkBlueText dark:text-White border-LightMode-VeryLightGrayBackground dark:border-DarkMode-VeryDarkBlueBackground absolute w-[98%] top-[50px] left-[10px] z-[1000] bg-White dark:bg-DarkMode-Elements">
+
+        <li class="w-full py-2 px-2 border-[1px] border-LightMode-VeryLightGrayBackground dark:border-DarkMode-VeryDarkBlueBackground cursor-pointer hover:bg-LightMode-VeryLightGrayBackground dark:hover:bg-DarkMode-VeryDarkBlueBackground">
+          <span class="font-semibold pl-1"> No se encontró resultado para:  </span><strong> {{formControls['searcher'].value}} </strong>
+        </li>
+      </ul>
+
+    </ng-template> -->
+    <ul *ngIf="!countriesFilteredFlag && formControls.searcher.dirty" class="max-h-[295px] border-[1px] text-LightMode-VeryDarkBlueText dark:text-White border-LightMode-VeryLightGrayBackground dark:border-DarkMode-VeryDarkBlueBackground absolute w-[98%] top-[50px] left-[10px] z-[1000] bg-White dark:bg-DarkMode-Elements">
+
+      <li class="w-full py-2 px-2 border-[1px] border-LightMode-VeryLightGrayBackground dark:border-DarkMode-VeryDarkBlueBackground cursor-pointer hover:bg-LightMode-VeryLightGrayBackground dark:hover:bg-DarkMode-VeryDarkBlueBackground">
+        <span class="font-semibold pl-1"> No se encontró resultado para:  </span><strong> {{formControls['searcher'].value}} </strong>
       </li>
     </ul>
 

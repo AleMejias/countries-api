@@ -14,6 +14,24 @@ module.exports = {
       '2xl': '1536px',
     },
     extend: {
+      keyframes: {
+        spinner: {
+          '0%': {
+            transform: 'rotate(0)',
+            animationTimingFunction: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)',
+          },
+          '50% ':{
+            transform: 'rotate(900deg)',
+            animationTimingFunction: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+          },
+          '100% ':{
+            transform: 'rotate(1800deg)'
+          }
+        }
+      },
+      animation: {
+        spinner: 'spinner 1.2s infinite',
+      },
       backgroundColor: {
         'DarkMode-Elements': '#2b3945',
         'DarkMode-VeryDarkBlueBackground': '#202c37',
